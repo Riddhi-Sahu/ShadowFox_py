@@ -58,3 +58,24 @@ completed the workout," and stop the program"""
 
 total_jumping_jacks = 0
 remaining_jumping_jacks = 100
+
+while remaining_jumping_jacks > 0:
+  # Perform 10 jumping jacks
+  total_jumping_jacks += 10
+  remaining_jumping_jacks -= 10
+
+  print("You completed", total_jumping_jacks, "jumping jacks.", remaining_jumping_jacks, "remaining.")
+  is_tired = input("Are you tired? (yes/no) ").lower()  # Convert to lowercase
+
+  if is_tired in ("yes", "y"):
+    skip_remaining = input("Do you want to skip the remaining sets? (yes/no) ").lower()
+    if skip_remaining in ("yes", "y"):
+      break  # Exit the loop if user wants to skip
+    else:
+      continue  # Continue if user wants to keep going
+
+# Print results based on completion status
+if total_jumping_jacks == 100:
+  print("Congratulations! You completed the workout.")
+else:
+  print("You completed a total of", total_jumping_jacks, "jumping jacks.")
